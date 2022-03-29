@@ -5,7 +5,7 @@ from torch.autograd import Variable
 import torch
 from torch import nn
 
-from qtensor_ai.Quantum_Neural_Net import MetricLearning
+from .Metric_Learning import MetricLearning
 from qtensor_ai import TamakiOptimizer
 
 from protonets.models import register_model

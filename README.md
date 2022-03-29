@@ -6,7 +6,7 @@ python setup.py install
 in the `QFSL` directory.
 Before running the code, download the Omniglot dataset by running
 ```bash
-download_omniglot.sh
+bash download_omniglot.sh
 ```
 To run the code, run
 ```bash
