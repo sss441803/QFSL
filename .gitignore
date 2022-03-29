@@ -1,6 +1,7 @@
 results/
 data/omniglot/data/
 *.png
+*.slurm
 
 ##########################
 # For Compressed Files
