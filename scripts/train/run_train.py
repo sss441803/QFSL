@@ -44,7 +44,7 @@ parser.add_argument('--model.z_dim', type=int, default=64, metavar='ZDIM',
 parser.add_argument('--model.layers', type=int, default=2, metavar='LYR',
                     help="number of encoding layers for the quantum circuit")
 parser.add_argument('--model.entanglement', type=float, default=2.0, help="multiplicative factor of initilized random entangling parameters. Default is full entanglement initialization")
-parser.add_argument('--model.distance', type=str, default='metric_learning', help="distance metric used. Choose from 'euclidean', 'cosine', 'qeuclidean' and 'metric_learning'")
+parser.add_argument('--model.distance', type=str, default='metric_learning', help="distance metric used. Choose from 'euclidean', 'cosine' and 'metric_learning'")
 
 # train args
 parser.add_argument('--train.epochs', type=int, default=10000, metavar='NEPOCHS',
