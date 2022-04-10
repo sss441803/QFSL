@@ -83,14 +83,6 @@ class Protonet(nn.Module):
             dists = self.cosine_dist(zq, zs)
             dists = dists.reshape(n_class*n_query, n_class, n_support).mean(2)
             log_p_y = F.log_softmax(dists, dim=1).view(n_class, n_query, -1)
-        elif self.distance == 'qeuclidean':
-            x = self.quantum_dist(zq, zs)
-            x = x.abs().reshape(n_class*n_query, n_class, n_support).mean(2)
-            dists = torch.arccos(x)*5
-            log_p_y = F.log_softmax(-dists, dim=1).view(n_class, n_query, -1)
-            #x = torch.abs(x)*0.9+0.1
-            #dists = torch.sqrt(1-x**2)/x
-            #log_p_y = F.softmax(-dists, dim=1).view(n_class, n_query, -1)
         elif self.distance == 'metric_learning':
             dists = self.quantum_dist(zq, zs) # dists: N X M, N=n_class*n_query, M=n_class*n_support
             dists = dists.reshape(n_class*n_query, n_class, n_support).mean(2) # dists: n_class*n_query X n_class
